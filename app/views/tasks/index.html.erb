@@ -3,12 +3,12 @@
 <ol>
   <% @tasks.each do |task| %>
     <li>
-      Title:<%= link_to task.title, task_path(task) %>
+      Title: <%= link_to task.title, task_path(task) %>
       <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
     </li>
-    <p>Details:<%= task.details %></p>
-    <p>Completed:<%= task.completed %></p>
+    <p>Details: <%= task.details %></p>
+    <p>Completed: <%= task.completed %></p>
   <% end %>
 </ol>
 
-<p><%= link_to "Add a new task", tasks_new_path %></p>
+<p><%= link_to "Add a new task", new_task_path %></p>
